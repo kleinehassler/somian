@@ -1,0 +1,85 @@
+
+ALTER TABLE docuse ADD COLUMN iscero boolean DEFAULT 'f';
+ALTER TABLE periodos ADD COLUMN cajero integer DEFAULT 0;
+
+ALTER TABLE sujetos ALTER calific TYPE character varying(2);
+ALTER TABLE sujetos
+   ALTER COLUMN calific DROP DEFAULT;
+
+
+ALTER TABLE periodos ADD COLUMN swclilis boolean DEFAULT 'f';
+
+CREATE TABLE rutas
+(
+   idrutas serial, 
+   ruta integer NOT NULL, 
+   vendedor integer NOT NULL, 
+   ciudad integer NOT NULL, 
+   CONSTRAINT pk_rutas PRIMARY KEY (idrutas)
+) 
+WITH (
+  OIDS = FALSE
+)
+;
+
+
+num fact campoverde 75825
+
+CREATE TABLE rutdis
+(
+  idrutdis serial NOT NULL,
+  ruta integer NOT NULL,
+  vendedor integer NOT NULL,
+  CONSTRAINT pk_rutdis PRIMARY KEY (idrutdis)
+)
+
+
+ALTER TABLE documents ADD COLUMN efectivo double precision DEFAULT 0;
+ALTER TABLE documents ADD COLUMN caja double precision DEFAULT 0;
+
+ALTER TABLE usuarios ADD COLUMN ptovta boolean DEFAULT 'false';
+
+****************************************************************************
+
+
+ALTER TABLE asientosdia ADD CONSTRAINT uk_asientosdia UNIQUE (code);
+
+
+******
+
+ALTER TABLE items ADD COLUMN cntbulto integer;
+
+
+*************************************************************************
+
+
+ALTER TABLE imagenrep ADD COLUMN proceso bool DEFAULT 'f';
+
+
+ALTER TABLE auditoria ADD COLUMN nomdoc varchar(25);
+ALTER TABLE auditoria ADD COLUMN observa varchar(200);
+
+ alter table usuarios add printasic bool DEFAULT false;
+ alter table usuarios add confimp bool DEFAULT true;
+ 
+ alter table imagenrep add proceso bool DEFAULT false;
+ 
+ ALTER TABLE auditoria ADD COLUMN campo varchar(100);
+ALTER TABLE auditoria ADD COLUMN valorant varchar(250);
+ALTER TABLE auditoria ADD COLUMN valoract varchar(250);
+
+
+
+ALTER TABLE items ADD COLUMN descripi character varying(200);
+
+
+
+ALTER TABLE items ADD COLUMN esaprox boolean DEFAULT 'f';
+
+
+
+ALTER TABLE saldosb ADD COLUMN salestcta double precision NOT NULL DEFAULT 0;
+
+
+ALTER TABLE plancuenta ADD COLUMN auxsuj integer DEFAULT 0;
+ALTER TABLE plancuenta ADD COLUMN auxite integer DEFAULT 0;

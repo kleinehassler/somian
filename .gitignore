@@ -1,0 +1,17 @@
+tempo/
+images/
+
+config.dat
+
+*.tmp
+*.zip
+*.rar
+*.fxp
+*.bak
+*.backup
+*.doc
+*.docx
+*.xls
+*.xlsx
+
+

@@ -1,0 +1,93 @@
+begin;
+
+delete from asientosmov where idasiento in (select idasiento from asientosdia where code=9603);
+
+delete from asientosdia where code=9603;
+
+delete from cobros where code=9603;
+
+delete from cheques where code=9603;
+
+delete from detadoci where code=9603;
+
+delete from detadocp where code=9603;
+
+delete from detadocb where code=9603;
+
+delete from detadocd where code=9603;
+
+delete from aneiva where code=9603;
+
+delete from documents where code=9603;
+
+commit;
+
+
+begin;
+
+delete from asientosmov where idasiento in (select idasiento from asientosdia );
+
+truncate asientosdia ;
+
+truncate cobros ;
+
+truncate aneiva;
+
+truncate detadoci ;
+
+truncate cheques;
+
+truncate detadocd;
+
+--delete from detadocb where isconfbanc;
+
+truncate detadocp;
+
+truncate detadocs;
+
+truncate detadocl;
+
+truncate importd;
+
+truncate importf;
+
+truncate impconte;
+
+truncate contenedord;
+
+truncate import;
+
+truncate producegr;
+
+truncate producing;
+
+truncate produccion;
+
+truncate saldoscon ;
+
+truncate saldosci;
+
+truncate saldosib;
+
+truncate saldosi;
+
+truncate saldosb;
+
+truncate retenreci;
+
+--delete from cheques where not isefectivo;
+
+truncate documents ;
+
+truncate horaex;
+
+truncate feriados;
+
+truncate conteof;
+
+update bloqueos set islock='f';
+
+truncate auditoria;
+
+commit;
+

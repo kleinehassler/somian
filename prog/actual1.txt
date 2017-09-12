@@ -1,0 +1,91 @@
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3134, 'MANTA', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3135, 'MARCABELI', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3136, 'NARANJAL', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3137, 'PIÑAS', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3138, 'PONCE ENRIQUEZ', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3139, 'PORTOVELO', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3140, 'PORTOVIEJO', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3141, 'PUERTO BOLIVAR', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3142, 'PUERTO LOPEZ', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3143, 'QUEVEDO', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3144, 'QUITO', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3145, 'RIOBAMBA', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3146, 'SALINAS', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3147, 'SANTO DOMINGO', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3149, 'TENGUEL', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3150, 'TORATA', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3151, 'TRIUNFO', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3152, 'ZARUMA', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3153, 'AMBATO', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3154, 'ATAHUALPA', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3155, 'AZOGUES', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3156, 'BAHIA', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3157, 'BALAO', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3158, 'BALSAS', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3159, 'BARBONES', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3160, 'CARIAMANGA', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3161, 'CATACOCHA', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3162, 'CUENCA', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3163, 'EL CAMBIO', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3165, 'LA PEAÑA', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3166, 'LA TRONCAL', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3167, 'LAS LAJAS', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3168, 'LATACUNGA', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3169, 'LOJA', '');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (23, 3172, 'ARENILLAS', '');
+
+SELECT setval('detagru_iddato_seq', 3173, true);
+
+update sujetos set sciudad=78 where (scode/100=271 or scode/100=710) and scode/100>99;
+update sujetos set sciudad=3134 where (scode/100=151) and scode/100>99;
+update sujetos set sciudad=3135 where (scode/100=279) and scode/100>99;
+update sujetos set sciudad=3136 where (scode/100=231) and scode/100>99;
+update sujetos set sciudad=3137 where (scode/100=275) and scode/100>99;
+update sujetos set sciudad=3138 where (scode/100=631) and scode/100>99;
+update sujetos set sciudad=3139 where (scode/100=277) and scode/100>99;
+update sujetos set sciudad=3140 where (scode/100=140) and scode/100>99;
+update sujetos set sciudad=3141 where (scode/100=281) and scode/100>99;
+update sujetos set sciudad=3142 where (scode/100=150) and scode/100>99;
+update sujetos set sciudad=3143 where (scode/100=191) and scode/100>99;
+update sujetos set sciudad=3144 where (scode/100=380) and scode/100>99;
+update sujetos set sciudad=3145 where (scode/100=300) and scode/100>99;
+update sujetos set sciudad=3146 where (scode/100=234) and scode/100>99;
+update sujetos set sciudad=79 where (scode/100=272) and scode/100>99;
+update sujetos set sciudad=3147 where (scode/100=391) and scode/100>99;
+update sujetos set sciudad=3149 where (scode/100=284) and scode/100>99;
+update sujetos set sciudad=3150 where (scode/100=286) and scode/100>99;
+update sujetos set sciudad=3151 where (scode/100=233) and scode/100>99;
+update sujetos set sciudad=3152 where (scode/100=276) and scode/100>99;
+update sujetos set sciudad=1347 where (scode/100=672) and scode/100>99;
+update sujetos set sciudad=3153 where (scode/100=460) and scode/100>99;
+update sujetos set sciudad=3172 where (scode/100=273) and scode/100>99;
+update sujetos set sciudad=3154 where (scode/100=288) and scode/100>99;
+update sujetos set sciudad=3155 where (scode/100=580) and scode/100>99;
+update sujetos set sciudad=3156 where (scode/100=152) and scode/100>99;
+update sujetos set sciudad=3157 where (scode/100=232) and scode/100>99;
+update sujetos set sciudad=3158 where (scode/100=278) and scode/100>99;
+update sujetos set sciudad=3159 where (scode/100=285) and scode/100>99;
+update sujetos set sciudad=3160 where (scode/100=673) and scode/100>99;
+update sujetos set sciudad=3161 where (scode/100=671) and scode/100>99;
+update sujetos set sciudad=3162 where (scode/100=620) and scode/100>99;
+update sujetos set sciudad=3163 where (scode/100=282) and scode/100>99;
+update sujetos set sciudad=77 where (scode/100=283) and scode/100>99;
+update sujetos set sciudad=76 where (scode/100=220) and scode/100>99;
+update sujetos set sciudad=3103 where (scode/100=274) and scode/100>99;
+update sujetos set sciudad=3165 where (scode/100=287) and scode/100>99;
+update sujetos set sciudad=3166 where (scode/100=591) and scode/100>99;
+update sujetos set sciudad=3167 where (scode/100=289) and scode/100>99;
+update sujetos set sciudad=3168 where (scode/100=420) and scode/100>99;
+update sujetos set sciudad=3169 where (scode/100=660) and scode/100>99;
+update sujetos set sciudad=75 where (scode/100=260 or scode/100=360) and scode/100>99;
+
+
+
+
+
+
+
+
+
+
+

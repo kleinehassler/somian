@@ -1,0 +1,11 @@
+CLIENTES
+select distinct c.fecord, c.fecha, c.valor, c.referencia, v.cliente, v.numfac, banco, cheque ;
+from ven007 c left join ven004 v on (c.numfac=v.numfac) ;
+where c.fecord>date() and year(c.fecord)<=2009 and c.tipo_fac='E' ;
+order by v.cliente
+
+PROVEEDORES
+select distinct c.fecord, c.fecha, c.valor, c.referencia, v.cliente, v.numfac, banco, cheque ;
+from ven007 c left join ven004 v on (c.numfac=v.numfac) ;
+where c.fecord>date() and year(c.fecord)<=2009 and c.tipo_fac='I' ;
+order by v.cliente

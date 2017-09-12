@@ -1,0 +1,929 @@
+<html>
+	<head>
+		<title>Eqeus</title>
+		<meta name="vs_showGrid" content="False">
+		<META HTTP-EQUIV="Content-language" CONTENT="cs">
+		<meta http-equiv="Content-type" CONTENT="text/html; charset=windows-1250">
+		<style> BODY {background-color:white;font-family:verdana,tahoma,arial,sans-serif;color:black;font-weight:normal;font-size:13px}
+	B {font-weight:bold;font-family:verdana,tahoma,arial,sans-serif;font-size:x-small;}
+	TD {font-family:verdana,tahoma,arial,sans-serif;font-size:x-small;font-weight:normal;}
+	TD.main {padding-top:5px;padding-left:10px;padding-right:10px;padding-bottom:15px; border:solid #000000 1px}
+	TD.indexmain {padding-top:5px;padding-left:10px;padding-right:10px;border-left:solid #000000 1px;border-right:solid #000000 0px}
+	TD.inleft {padding-top:5px;padding-left:10px;padding-right:10px;border:solid #000000 0px}
+	TD.left {padding-top:5px;padding-left:7px;padding-right:7px;padding-bottom:5px;vertical-align:top;background-color:#EEEEEE;border-left:solid #000000 1px;border-top:solid #000000 1px}
+	TD.right {padding-top:5px;padding-left:7px;padding-right:7px;padding-bottom:5px;vertical-align:top;background-color:#FFFFEE;border-right:solid #000000 0px;border-top:solid #000000 0px;border-bottom:solid #000000 0px}
+	P {font-family:verdana,tahoma,arial,sans-serif;font-size:x-small;font-weight:normal;}
+	A {color:#dc143c;text-decoration:none;font-weight:normal;}
+	A.navi {color:#000040;text-decoration:none;}
+	A.navi2 {color:#000040;text-decoration:none;font-size:8pt;}
+	.headline {font-size:14px}
+	A.cz { font-family: arial, helvetica, sans-serif; font-size:7pt; text-decoration: none; font-weight: bold; color: #3366cc; }
+	A.spechvr { font-family: arial, helvetica, sans-serif; font-size:8pt; text-decoration: none; font-weight: bold; color: #3366cc; }
+	A:hover {background-color:#cccccc;}
+	p.little {font-size:8pt;}
+	TT {font-family:tahoma;font-size:8pt;}
+	INPUT {font-family:verdana,tahoma,arial,sans-serif;font-size:x-small;}
+	PRE {font-family:Courier-new;font-size:x-small;}
+	.shortnews {font-family:verdana,Arial;font-size:8pt;}
+	.expldiv {border: solid 1px black; margin-left:30px; padding:5px; margin-top:8px; margin-bottom:8px; width:70%}
+	</style>
+	</head>
+	<body>
+		<H2>
+			Version 9.7</H2>
+		<P>Release date: 07/21/2004</P>
+		<div style="BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: black 1px solid; PADDING-LEFT: 8px; PADDING-BOTTOM: 8px; BORDER-LEFT: black 1px solid; PADDING-TOP: 8px; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: silver">
+			<B>Installation note</B>
+			<P>In order to save reports as pictures, XFRX requires two additional libraries to 
+				be installed:
+			</P>
+			<UL>
+				<LI>
+					<B>msvcr71.dll</B> - Microsoft Visual C++ 7.1 runtime library. If it is not 
+					installed on your pc, you can download it from <A href="http://www.eqeus.com/files/msvcr71.zip">
+						http://www.eqeus.com/files/msvcr71.zip</A>.
+				<LI>
+					<B>gdiplus.dll</B> - This dll is included with WindowsXP and if it is not 
+					available on your pc, you can download it from <A href="http://www.microsoft.com/msdownload/platformsdk/sdkupdate/psdkredist.htm">
+						http://www.microsoft.com/msdownload/platformsdk/sdkupdate/psdkredist.htm</A>.</LI></UL>
+			<P>If you are not planning to export reports as pictures, you can download a 
+				special version of XFRXLIB.FLL (<A href="http://www.eqeus.com/files/xfrxlib-nogdiplus.zip">http://www.eqeus.com/files/xfrxlib-nogdiplus.zip</A>
+				), which doesn't require the two dlls mentioned above.</P>
+		</div>
+		<h3>New features</h3>
+		XFRX is now able to convert reports to <b>plain text</b>. This option is useful 
+		for:
+		<ul>
+			<li>
+			Printing the report on a character based printer (e.g. dot matrix printer)
+			<li>
+				Using the report output in a character based environment - e.g. showing the 
+				output in a dos window or sending it as a plain text email message
+			</li>
+		</ul>
+		For more information about the new plain text output option, please see the <a href="http://www.eqeus.com/xfrxmanual/plaintext.html">
+			plain text option</a> chapter in the XFRX manual.
+		<H3>Bug fixes</H3>
+		<UL>
+			<li>
+				XFRX report engine
+				<ul>
+					<li>
+					When the "Print repeated values" option is switched to "No", the "Also print In 
+					first whole band of new page/column" option is now correctly handled
+					<li>
+					Fixed the problem with cutting last words of long labels
+					<li>
+						The crashing problem on very long text objects (thousands of lines) has been 
+						fixed.</li>
+				</ul>
+			<li>
+				PDF output
+				<ul>
+					<li>
+					Tabs are now correctly handled in the PDF output (the tab width is derived from 
+					the font and font size used).
+					<li>
+						The problem with rectangles and lines misplacement was fixed (the rectangles 
+						and lines were shifted by 1/2 - 2 points, depending on the line width).</li>
+				</ul>
+			<li>
+				XFRX report previewer
+				<ul>
+					<li>
+					The report previewer could not be closed if the report generated was empty or 
+					the generation process was interrupted
+					<li>
+						The problem with searching through long text objects was fixed (the search 
+						algorithm didn't correctly displayed all occurrences of the text searched)</li>
+				</ul>
+			</li>
+		</UL>
+		<HR width="65%">
+		<!-- ------------------------------------------------------ -->
+		<H2>
+			Version 9.6</H2>
+		<P>Release date: 05/24/2004</P>
+		<P><STRONG>Installation notes:</STRONG> Please be aware that all three libraries 
+			have been updated in this version (hndlib.dll, zlib.dll and xfrxlib.fll).</P>
+		<P>In order to save reports as pictures, XFRX requires two additional libraries to 
+			be installed:
+		</P>
+		<UL>
+			<LI>
+				<B>msvcr71.dll</B> - Microsoft Visual C++ 7.1 runtime library. If it is not 
+				installed on your pc, you can download it from <A href="http://www.eqeus.com/files/msvcr71.zip">
+					http://www.eqeus.com/files/msvcr71.zip</A>.
+			<LI>
+				<B>gdiplus.dll</B> - This dll is included with WindowsXP and if it is not 
+				available on your pc, you can download it from <A href="http://www.microsoft.com/msdownload/platformsdk/sdkupdate/psdkredist.htm">
+					http://www.microsoft.com/msdownload/platformsdk/sdkupdate/psdkredist.htm</A>.</LI></UL>
+		<P>If you are not planning to export reports as pictures, you can download a 
+			special version of XFRXLIB.FLL (<A href="http://www.eqeus.com/files/xfrxlib-nogdiplus.zip">http://www.eqeus.com/files/xfrxlib-nogdiplus.zip</A>), 
+			which doesn't require the two dlls mentioned above.
+		</P>
+		<H3>Bug fixes</H3>
+		<UL>
+			<li>
+				Fixes in XLS output format:
+				<ul>
+					<li>
+					Excel version check has been added
+					<LI>
+					Texts that could have been evaluated as numeric expressions (e.g. 10-2, 45/3) 
+					were incorrectly transformed as numerics in Excel output
+					<li>
+					Numeric expressions with formats&nbsp;can now be converted to formatted numeric 
+					cells &nbsp;
+					<li>
+						Page size, orientation and page margins are now correctly transformed to the 
+						generated documents</li>
+				</ul>
+			<li>
+			chr(10) should work the same way as chr(13) or chr(13)+chr(10). Chr(10) was 
+			ignored by XFRX.
+			<li>
+			Rectangles stretching from page header to page footer were too high if report 
+			title was used
+			<li>
+			'opaque' ractangles with white back color should be printed as transparent. 
+			(this worked incorrectly in output to images)
+			<LI>
+			resizing the bookmark panel in the previewer generated an error is there were 
+			no bookmarks
+			<LI>
+			White lines were incorrectly printed as black in RTF output
+			<LI>
+			Tabs are now supported in PDF
+			<LI>
+				Problems with rotated underlined text in PDF have been fixed</LI></UL>
+		<H3>New features</H3>
+		<P><STRONG>Note:</STRONG> If you are interested in making your reports accessible 
+			via the internet, you can have a look at a web based report previewer demo 
+			application utilizing XFRX compiled as VFP COM DLL. (<a href="http://81.2.210.159/eqeus.com/x.net" target="new">Run 
+				demo</a>).
+		</P>
+		<a name="zipgen"><b>Zipping the generated file</b></a>
+		<div style="PADDING-LEFT:30px; PADDING-TOP:10px">
+			The generated file can now be automatically zipped. We have added new 
+			parameters to Setparams method:
+			<p>
+				<div style="BORDER-RIGHT:black 1px solid; PADDING-RIGHT:10px; BORDER-TOP:black 1px solid; PADDING-LEFT:10px; PADDING-BOTTOM:10px; BORDER-LEFT:black 1px solid; PADDING-TOP:10px; BORDER-BOTTOM:black 1px solid; BACKGROUND-COLOR:silver">
+					<B>SetParams</B> method
+					<P>
+						<B>Syntax: </B>
+						<BR>
+					XFRXSession::Setparams(tcOutputName, tcDirectory, tlNotOpenWiewer, tcCodePage, 
+					tlSilent, tlNewSession, tcTarget, tcArchive, tlAdditive, tlDeleteFileAfter)
+					<P>
+						<B>New parameters: </B>
+					<P><EM>tcArchive</EM><BR>
+						&nbsp; The name of the zip archive to be created. If not empty, the generated 
+						file will be added to the archive after generation (optional)<BR>
+						<BR>
+					<P><EM>tlAdditive</EM><BR>
+						&nbsp; If set to .T. and the archive already exists, the file will be added. 
+						(optional)<BR>
+						Please note: you can add several files to the archive, but existing files with 
+						the same name will not be overwritten - the new files will always be added.
+						<BR>
+					<P><EM>tlDeleteFileAfter</EM><BR>
+						&nbsp; If set to .T., the generated file&nbsp;is be deleted after it&nbsp;is 
+						copied to the archive. (optional)<BR>
+						<BR>
+					</P>
+				</div>
+			<p>
+			Example:
+			<P>
+			With these SetParams parameters, XFRX first creates "invoices.pdf", then 
+			creates "archive.zip" (if it doesn't exist) and adds "invoices.pdf" into the 
+			archive. Then "invoices.pdf" will be deleted:
+			<p>
+				lnRetVal = loSession.SetParams("invoices.pdf",,.T.,,,,"PDF","archive.zip", .t., 
+				.t.)</p>
+			<p></p>
+		</div>
+		<a name="supBands"><b>Optional band printing</b></a>
+		<div style="PADDING-LEFT:30px; PADDING-TOP:10px">
+			You can prevent individual report bands from printing by calling skipBands() 
+			methods of the XFRXSession object. A parameter of this method is a string 
+			containing a comma delimited list of bands that will be skipped. The bands are 
+			represented by codes as stated in the following table:
+			<TABLE id="Table1" cellSpacing="0" cellPadding="2" border="1">
+				<TR>
+					<TD><b>Band</b></TD>
+					<TD><b>Code</b></TD>
+				</TR>
+				<TR>
+					<TD>Title</TD>
+					<TD>T</TD>
+				</TR>
+				<TR>
+					<TD>Page header</TD>
+					<TD>H</TD>
+				</TR>
+				<TR>
+					<TD>Column header</TD>
+					<TD>CH</TD>
+				</TR>
+				<TR>
+					<TD>Group n header</TD>
+					<TD>GHn</TD>
+				</TR>
+				<TR>
+					<TD>Detail</TD>
+					<TD>D</TD>
+				</TR>
+				<TR>
+					<TD>Group n footer</TD>
+					<TD>GFn</TD>
+				</TR>
+				<TR>
+					<TD>Column footer</TD>
+					<TD>CF</TD>
+				</TR>
+				<TR>
+					<TD>Page footer</TD>
+					<TD>F</TD>
+				</TR>
+				<TR>
+					<TD>Summary</TD>
+					<TD>S</TD>
+				</TR>
+			</TABLE>
+			<p>
+				Example:<br>
+				<b>loSession.skipBands("H,GH1,GF3,S")</b>
+			<p></p>
+		</div>
+		<a name="xlsformats"><b>Numeric field picture format in Excel</b></a>
+		<div style="PADDING-LEFT:30px; PADDING-TOP:10px">
+			The format definition of numeric cells in Excel is different from the format 
+			syntax used in Foxpro. XFRX is now able to convert the simple format 
+			definitions and allows for user-defined implicit and/or explicit Excel-type 
+			format definitions.
+			<br>
+			In Visual Foxpro, the numeric field is converted to its text representation 
+			based on an explicit format definition (format field in the report expression 
+			definition) or field's decimal places and SET DECIMAL setting.
+			<br>
+			When a numeric field is transformed to an Excel cell, the following algorithm 
+			is used:
+			<br>
+			<ol>
+				<li>
+					If there is an explicit XLS format defined, use it.
+					<div class="expldiv" id="DIV2">To define an explicit XLS format for a numeric 
+						field, add:<p>
+							<b>#UR XLSF= (expression)</b>
+						<p>
+						to the field's comment.<p>
+							Example:<br>
+							<b>#UR XLSF="General"</b><br>
+							<div style="MARGIN-LEFT:20px">The "General" formatting - no special formatting, the 
+								number of decimal places is determined by the field's value</div>
+							<b>#UR XLSF="Standard"</b><br>
+							<div style="MARGIN-LEFT:20px">The "Standard" formatting - two decimal places, 
+								thousand and decimal separators will be used according to the Excel defaults</div>
+							<b>#UR XLSF="#0.00"</b><br>
+							<div style="MARGIN-LEFT:20px">Two decimal places, no leading zeros</div>
+							<b>#UR XLSF="#0.00;[red]#0.00"</b><br>
+							<div style="MARGIN-LEFT:20px">Two decimal places, display negative numbers in red</div>
+					</div>
+				<li>
+					If the field contains a format definition, try to look up the format in a 
+					conversion table. A conversion table can be populated programatically when XFRX 
+					is executed so that the formats that are often used and cannot by converted 
+					automatically by XFRX would not require an explicit definition in each field in 
+					the report.
+					<div class="expldiv" id="Div4">To add an entry to the conversion table, use 
+						addXLSFormatConversion method of XFRXSession class.
+						<p>
+							Example:<br>
+							<b>loSession.addXLSFormatConversion("@L 999999.99","000000.00")</b><br>
+						</p>
+					</div>
+				<LI>
+				If the field&nbsp;contains a format definition and it is not listed in the 
+				conversion table, try to convert it. XFRX is able to convert simple format 
+				definitions containing the following characters: '9', '#', ',', '.' and ' '. 
+				For example, 999,999.99 is converted to ###,###.00.
+				<li>
+					If the format cannot be converted, use the implicit XLS numeric format, if 
+					available.
+					<div class="expldiv" id="Div3">To define the implicit XLS numeric format, call 
+						setDefaultXLSFormat method of the XFRXSession object with the implicit format 
+						as a parameter.
+						<p>
+							Example:<br>
+							<b>loSession.setDefaultXLSFormat("General")</b><br>
+						</p>
+					</div>
+				<li>
+					If the implicit XLS numeric format is not defined, XFRX creates a format 
+					definition to display the same number of decimals as in VFP report output.</li>
+			</ol>
+			If you want to specify that a certain numeric field should be&nbsp;converted 
+			as&nbsp;a text cell in the excel sheet, define "TEXT" as its explicit XLS 
+			numeric format:
+			<p><b> #UR XLSF='TEXT' </b>
+			<P>
+				For a live example of formatting the Excel cells, please have a look at the 
+				"XLS formatted numeric cells sample" report in the demo application.
+			</P>
+		</div>
+		<HR width="65%">
+		<H2>
+			Version 9.5</H2>
+		Release date: 04/01/2004
+		<p><B>Installation note</B> : In order to save reports as pictures, XFRX requires 
+			two additional libraries to be installed:
+			<UL>
+				<li>
+					<b>msvcr71.dll</b> - Microsoft Visual C++ 7.1 runtime library. If it is not 
+					installed on your pc, you can download it from <a href="http://www.eqeus.com/files/msvcr71.zip">
+						http://www.eqeus.com/files/msvcr71.zip</a>.
+				<li>
+					<b>gdiplus.dll</b> - This dll is included with WindowsXP and if it is not 
+					available on your pc, you can download it from <a href="http://www.microsoft.com/msdownload/platformsdk/sdkupdate/psdkredist.htm">
+						http://www.microsoft.com/msdownload/platformsdk/sdkupdate/psdkredist.htm</a>.</li></UL>
+		<P>If you are not planning to export reports as pictures, you can download a 
+			special version of XFRXLIB.FLL (<a href="http://www.eqeus.com/files/xfrxlib-nogdiplus.zip">http://www.eqeus.com/files/xfrxlib-nogdiplus.zip</a>), 
+			which doesn't require the two dlls mentioned above.
+		</P>
+		<P>
+			<H3>Bug fixes</H3>
+			<UL>
+				<LI>
+				The problem with bookmark text cutting in encrypted PDF documents has been 
+				fixed.
+				<LI>
+				Problem with multiline labels not displayed correctly in the previewer&nbsp;has 
+				been fixed (beta regression).
+				<LI>
+				The z-order of rectangles stretching multiple bands has been fixed.
+				<LI>
+				Problem with 'print-when' expression not evaluated in certain scenarios has 
+				been fixed.
+				<LI>
+				Pictures are now correctly displayed in Word and Excel documents if temporary 
+				path parameter is not empty.
+				<LI>
+				Pictures from general fields are now correctly displayed in RTF documents.
+				<LI>
+				Problem with blank reports in VFP5 was fixed.
+				<LI>
+				The problem with alignment on manually generated reports was fixed.
+				<LI>
+					The stability of the XFRX previewer has been improved.</LI>
+			</UL>
+			<H3>New features</H3>
+			<UL>
+				<li>
+				BMP, PNG, JPEG, GIF and TIFF output formats were added.
+				<LI>
+					The report previewer can be localized. Currently available localizations are: 
+					French, Czech and you&nbsp;can also add new&nbsp; <a href="#l10n">localizations</a>&nbsp;yourself.</LI>
+			</UL>
+			<a name="pics"><b>Exporting reports as pictures</b></a>
+			<div style="PADDING-LEFT:30px; PADDING-TOP:10px">
+				XFRX is able to export individual report pages as BMP, PNG, GIF and JPEG 
+				pictures, multiple pages can be exported to TIFF image format.
+				<br>
+				The picture generation process is divided into two steps:
+				<ol>
+					<li>
+					the report is generate as XFF cursor
+					<li>
+						savePicture method of the XFFWriter class is called to generate the picture</li>
+				</ol>
+				The advantage of this approach is that once the XFF file is generated, it is 
+				very easy to get the page count, generate individual pictures in a cycle, etc.
+				<p>
+					<div style="BORDER-RIGHT:black 1px solid; PADDING-RIGHT:10px; BORDER-TOP:black 1px solid; PADDING-LEFT:10px; PADDING-BOTTOM:10px; BORDER-LEFT:black 1px solid; PADDING-TOP:10px; BORDER-BOTTOM:black 1px solid; BACKGROUND-COLOR:silver"><B>SavePicture</B>
+						method saves the report page(s) as a picture.
+						<P>
+							<B>Syntax: </B>
+							<BR>
+						XFRXWriter::SavePicture(tcFilename, tcType, tnFrom [, tnTo [, tnBpp [, 
+						tnJPEGQuality [, tnThumbnailWidth [, tnThumbnailHeight] ] ] ] ])
+						<P>
+							<B>Parameters: </B>
+						</P>
+						<P><EM>tcFilename<BR>
+								&nbsp; </EM>The name of the file to be generated.<BR>
+							<BR>
+							<EM>tcType<BR>
+								&nbsp; </EM>The format of the picture to be saved. Currently supported 
+							options are: BMP, GIF, JPEG, PNG, TIFF.<BR>
+							<BR>
+							<EM>tnFrom<BR>
+								&nbsp;&nbsp;</EM>The page number to be saved. If TIFF format is being 
+							saved, the parameter specifies the first page to be saved.<BR>
+							&nbsp;<BR>
+							<EM>tnTo<BR>
+								&nbsp; </EM>If TIFF format is being saved,&nbsp;the parameter specifies the 
+							last page to be saved. Ignored otherwise.<BR>
+						</P>
+						<P><EM>tnBpp<BR>
+								&nbsp; </EM>Bits per pixel. Currently supported values are 16 or 24.<BR>
+						</P>
+						<P><EM>tnJPEGQuality<BR>
+								&nbsp; </EM>Specifies the JPEG compression quality. The range is from 1 - 
+							the lowest quality to 100 - the best quality. The default value is 0 - default 
+							quality. Ignored for other output types.<BR>
+						</P>
+						<P><EM>tnThumbnailWidth<BR>
+								&nbsp; </EM>The width of the output picture in pixels.
+							<BR>
+						</P>
+						<P><EM>tnThumbnailHeight</EM>&nbsp;<BR>
+							&nbsp; </EM>The&nbsp;height of the output picture in pixels.
+						</P>
+						If both <EM>tnThumbnailWidth </EM>and<EM>&nbsp;<EM>tnThumbnailHeight </EM></EM>are 
+						omitted, the original page size is used. If only one of the values is sent, the 
+						other one is calculated accordingly.<BR>
+						<BR>
+						<B>Return values<BR>
+							<BR>
+						</B>&nbsp;0 ... no errors was encountered<BR>
+						-1 ... unknown image format<BR>
+						-2 ... page out of range<BR>
+						<BR>
+					</div>
+				<p><BR>
+					If this sounds complicated, please have a look at the example, it is actually 
+					quite simple:
+					<pre>	loSession=EVALUATE([xfrx("XFRX#INIT")])
+<FONT color=#009900>	*
+	* nothing is sent as the file name, so only a memory cursor is created
+	*</FONT>
+	lnRetVal =loSession.SetParams(,,,,,,"XFF")				
+	If lnRetVal = 0
+		loSession.ProcessReport("invoices")			
+<FONT color=#009900><FONT color=#000000>		local loXFF</FONT>
+		*
+		* the finalize method returns a XFFWriter object reference,
+		* which will used to save the pictures
+		*</FONT>
+		loXFF = loSession.finalize()
+		LOCAL lnI, lnJpegQuality
+		lnJpegQuality = 80
+<FONT color=#006600>		*
+		* loXFF.pagecount contains the number of pages if the report that 
+		* was just generated
+		*
+		* we are now going to save all pages one by one as separate jpeg pictures
+		*</FONT>
+		FOR lnI = 1 TO loXFF.pagecount
+			loXFF.savePicture("page"+ALLTRIM(STR(lnI))+".jpg","jpg",lnI,lnI,24,lnJpegQuality)
+		ENDFOR
+		MESSAGEBOX("Pictures saved.")
+	Endif				
+				</pre>
+			</div>
+			<a name="l10n"><b>XFRX report previewer localization</b></a>
+			<div style="PADDING-LEFT:30px; PADDING-TOP:10px">
+				Each localization is stored in two files:
+				<ul>
+					<li>
+					XFRXLIB_&lt;localization_code&gt;.dbf - strings translation
+					<li>
+						XFRXLIB_&lt;localization_code&gt;.vcx - find and page selection dialogs 
+						localization</li>
+				</ul>
+				To create a new localization, please follow these steps:
+				<ol>
+					<li>
+					Choose a code for your localization (e.g. DE for German)
+					<li>
+					Create a copy of default localization DFB (localization\default\XFRXLIB_XXX.DBF 
+					(+CDX, +FPT)). Change the suffix according to your localization code. The 
+					default localization DBF contains English strings that need to be translated.
+					<li>
+						Create XFRXLIB_&lt;localization_code&gt;.vcx visual class library using 
+						localization\default\locClass.prg. Send the localization code as a parameter.
+						<br>
+						Example: Copy locClass to the XFRXLIB directory and call:<p>
+						</p>
+						do locClass with "DE"
+						<p>
+							which will create the XFRXLIB_DE class library.</p>
+					Translate the two dialog classes in the class library.
+					<li>
+						Copy the localization files to XFRXLIB directory.</li>
+				</ol>
+				To activate the localization in your code, call setLanguage method of XFCont 
+				class. Send the localization code as a parameter.<p>
+					Example: this.cntXFRX.setLanguage("DE")</p>
+			</div>
+			<HR width="65%">
+			<br>
+			<H2>Version 9.0</H2>
+		Release date: 01/03/2004
+		<p>
+		Please note we have added a new library that is required for XFRX to run: 
+		XFRXLIB.FLL. Please copy XFRXLIB.FLL to the same directory where HNDLIB.DLL and 
+		ZLIB.DLL are.
+		<p>
+			<H3>Bug fixes</H3>
+			<UL>
+				&lt; LI&gt; '&lt;' and'&gt;' are now handled correctly in Word output
+				<LI>
+				SEEK function now works correctly in print-when condition
+				<LI>
+				the data environment procedures in built-in reports are now processed correctly
+				<LI>
+				'HTML' filename extension is now correctly recognized
+				<LI>
+					the session temporary directory is now deleted in session object destroy method</LI>
+			</UL>
+			<H3>New features</H3>
+			<UL>
+				<LI>
+				XFRX is now able to export and import XML
+				<li>
+				XFRX now natively supports RTF. The RTF documents are generated directly in 
+				XFRX, no third party software&nbsp;- e.g. MS Word - is required.
+				<LI>
+				major speedup (around 300%) in transforming reports to&nbsp;the XFRX previewer 
+				(container bar) and in previewing of XFF files
+				<LI>
+				The report generation process speedup (around 30%)
+				<LI>
+				Major speed increase in processing unformatted numeric values in VFP5, VFP6 and 
+				VFP7.
+				<LI>
+					the XFRX previewer can now handle an unlimited&nbsp;number of pages (the only 
+					limit is the disc space)</LI></UL>
+			<HR width="65%">
+		<p>
+			<H2>Version 8.3</H2>
+			Release date: 11/10/2003
+			<H3>Bugs fixes</H3>
+			<ul>
+				<li>
+				Problem with PDF font embedding into encrypted documents has been fixed
+				<li>
+				THISFORM is now supported in variable init values and FOR and WHILE clauses
+				<li>
+				'lines are printed black' problem has been fixed in HTML
+				<li>
+				the XLS generation process now doesn't display any dialog windows when "SET 
+				SAFETY" if on
+				<li>
+					Problem with pictures in PDF library has been fixed</li>
+			</ul>
+			<H3>New features</H3>
+			<ul>
+				<li>
+				PDF Library now supports picture and text rotation and font embedding
+				<li>
+					Automatic font embedding on Latin2 character can now be switched off (it is not 
+					required in Acrobat 6.0)
+					<DIV style=" FONT-SIZE: 8pt; MARGIN-LEFT: 15px; WIDTH: 80%" id="DIV1">
+						To display latin2 characters of some fonts (Times New Roman, Arial, Courier 
+						New) correctly, Adobe Acrobat ver. 5.0 required to embed these characters into 
+						the PDF document. When codepage 1250 was used, XFRX automatically included the 
+						font subsets of these fonts.<BR>
+						Since ver. 6.0, Acrobat displays the characters correctly even if they are not 
+						embedded.
+						<br>
+						By default, XFRX does embed the characters. If you're using Acrobat ver. 6.0 
+						only, you can made XFRX not embed the fonts by calling:
+						<br>
+						<tt>loSession.setEmbeddingType(0)</tt>
+					</DIV>
+				</li>
+			</ul>
+		<p>
+			<hr width="65%">
+			<H2>Version 8.2</H2>
+			Release date: 10/14/2003
+			<H3>Bugs fixes</H3>
+			<ul>
+				<li>
+				Problem with digits printed in background has been fixed
+				<li>
+					Problem with money type recognition has been fixed</li>
+			</ul>
+		If you're using versions 8.0 or 8.1, we recommend upgrading to 8.2.
+		<p>
+			<hr width="65%">
+			<H2>Version 8.1</H2>
+			Release date: 10/14/2003
+			<H3>Bugs fixes</H3>
+			<ul>
+				<li>
+				fixed the problem with printing group-related variables in page footer
+				<li>
+				font embedding in PDF is now supported in encrypted PDF documents
+				<li>
+				'vertical lines printed slanted' problem has been fixed
+				<li>
+				fixed problem with variables not incremented in summary reports
+				<li>
+					hndlib.dll version is now being check at XFRX startup</li>
+			</ul>
+		Please note that there is updated HNDLIB.DLL in this version. If this version 
+		of XFRX is run with the previous version of HNDLIB.DLL, 'old version of 
+		hndlib.dll" error message is displayed.
+		<p>
+		We'd like to apologize for the 'vertical lines printed slanted' bug. If you're 
+		using version 8.0 and have vertical lines in your reports, we recommend 
+		upgrading to 8.1.
+		<p>
+			<hr width="65%">
+			<H2>Version 8.0</H2>
+			Release date: 10/04/2003
+			<H3>Bugs fixes</H3>
+			<ul>
+				<li>
+				SKIP command during the report generation is now supported
+				<li>
+				Confirm Conversions flags is now being switched off automatically when 
+				generating Word documents
+				<li>
+				Problem with temporary directories being left has been fixed
+				<li>
+				Slanted lines are now supported
+				<li>
+					Problem with Page Footers variables in XLS output has been fixed</li>
+			</ul>
+			<H3>New features</H3>
+			<ul>
+				<li>
+				The preview container now supports bookmarks and hyperlinks
+				<li>
+					XFRX is able to save the generated report to a file and preview it or transform 
+					it to any of the target formats (PDF, Word, HTML, Excel) any time later.
+					<br>
+					Please see our <a href="http://www.eqeus.com/xff.html">Saving generated reports 
+						tutorial</a> and also the demo previewer in the <a href="http://www.eqeus.com/xfrxdownload.php">
+						evaluation version</a>.</li>
+			</ul>
+		<p>
+			<hr width="65%">
+			<H2>Version 7.1</H2>
+			Release date: 9/22/2003
+			<H3>Bugs fixes</H3>
+			<ul>
+				<li>
+				Start group in new column checkbox is now suppported
+				<li>
+				Column footer were incorrectly placed in DOC and HTML
+				<li>
+				Page orientation setting is now supported in XLS
+				<li>
+				Numeric fields are now converted to numeric cells in XLS output
+				<li>
+				Bitmap and JPG pictures in general fields are now supported in XLS and object 
+				container
+				<li>
+				Page headers and footers are suppored in summary page (new feature in VFP 8)
+				<li>
+				Major speedup of container object
+				<li>
+				Problem with security warning in Excel XP version has been fixed
+				<li>
+					fixed the problem with missing pictures in DOC output when temporary directory 
+					was used</li>
+			</ul>
+			<H3>New features</H3>
+			<a name="CNTnew"><b>New features in the container object</b></a>
+		<p>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<ul>
+							<li>
+							added ability to search the report
+							<li>
+							mouse-wheel is now supported
+							<li>
+							mouse middle button is now supported
+							<li>
+							right-click menu was added
+							<li>
+							new toolbar
+							<li>
+							major scroll speed increase
+							<li>
+								and much more is going to come soon :)</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<a name="HTMLBook"><b>Bookmarks in HTML output</b></a>
+		<p>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						XFRX can now optionally generate bookmarks (outlines) into the result document. 
+						Please see <a href="http://www.eqeus.com/xfrxmanual.php#outlines">Creating 
+							bookmarks (document outline)</a> section in XFRX manual to see how to 
+						define a bookmark.
+						<br>
+						To enable bookmarks in the HTML output, call
+						<pre>
+loSession.SetOtherParams("PRINT_BOOKMARKS",.t.) </pre>
+						before calling loSession.ProcessReport()
+						<br>
+						With bookmarks enabled, XFRX will generate three HTML pages: the main page 
+						defining the page frames, the bookmark page and the page with the report 
+						output.
+					</td>
+				</tr>
+			</table>
+			<br>
+			<a name=""><b>XLS cells adjustment</b></a>
+		<p>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						When XLS document is generated, vertical and horizontal coordinates of objects 
+						are adjusted - if the difference between two coordinates is smaller than a 
+						certain value, the coordinates are 'aligned'. This approach significantly 
+						reduces the number of rows and columns in the generated document.<br>
+						Now it is possible to define this minimal different. The greater the number is, 
+						the lesser number of rows/columns is generated, but if the number is too big, 
+						fields might get overlapped and could be left out.<br>
+						Call SetOtherParams method with "HORIZONAL_ADJUSTMENT" or "VERTICAL_ADJUSTMENT" 
+						to define the minimal horizontal and/or vertical difference.
+						<br>
+						Example:
+						<pre>
+loSession.SetOtherParams("HORIZONTAL_ADJUSTMENT",1000) &amp;&amp; default value = 76 
+loSession.SetOtherParams("VERTICAL_ADJUSTMENT",1000) &amp;&amp; default value = 180 </pre>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<a name=""><b>Pictures rotation in PDF</b></a>
+		<p>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						Pictures now can be rotated the same way as text fields. Please see <a href="http://www.eqeus.com/xfrxmanual.php#rotation">
+							Object rotation in PDF</a> chapter in the manual to see how to define the 
+						rotation.
+					</td>
+				</tr>
+			</table>
+			<br>
+			<a name="xfrxbreak"><b>Canceling report generation in progress</b></a>
+		<p>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						The generation process in progress can be canceled by setting the global 
+						variable gnStopXFRX to 1. For example, you can, for example, use it this way:
+						<pre>
+ON KEY LABEL Esc gnStopXFRX = 1
+	</pre>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<hr width="65%">
+			<H2>Version 7.0</H2>
+			Release date: 8/25/2003
+			<H3>Bugs fixes</H3>
+			<ul>
+				<li>
+				problem with center alignment has been fixed
+				<li>
+				problem with long detail band wrapping to the new page has been fixed
+				<li>
+					the speed of the generation of reports with numeric fields without format 
+					string has increased in VFP8</li>
+			</ul>
+			<H3>New features</H3>
+			<ul>
+				<li>
+					XFRX now exports to Excel, too. Please check out the <a href="http://www.eqeus.com/xfrxdownload.php">
+						evaluation version</a> and the <a href="http://www.eqeus.com/xls.html">tutorial</a>.</li>
+			</ul>
+			<hr width="65%">
+			<H2>Version 6.5</H2>
+			<H3>Bugs fixes</H3>
+			<ul>
+				<li>
+				the database is searched in PATH now
+				<li>
+				problem with rectangle formatting in CNT output was fixed
+				<li>
+				problem with MHT pictures location was fixed
+				<li>
+				problem with rounded rectangles not working with certain regional settings was 
+				fixed
+				<li>
+				header and summary bands now follow the "New page" checkbox
+				<li>
+					problem with incorrect multiline textbox output in Word documents was fixed</li>
+			</ul>
+			<H3>New features</H3>
+			<!--
+<a name=""><b></b></a>
+<p>
+<table>
+<tr>
+<td>&nbsp;</td><td>
+</td>
+</tr>
+</table>
+-->
+			<a name="docsplit"><b>Word document splitting</b></a>
+		<p>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						When the generated documents are very long, Word application has problem with 
+						the conversion - it takes very long to convert it. To avoid this problem, XFRX 
+						now can split the generated document into more smaller documents. To set this 
+						up, call SplitDocument() method before calling ProcessReport():
+						<pre>loSession.SplitDocument(tnPages)</pre>
+						tnPagesp is the number of pages each of the resulting documents would have.
+					</td>
+				</tr>
+			</table>
+			<br>
+			<a name="pageranges"><b>Printing page ranges</b></a>
+		<p>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						To define the page range, call setPageRange() method before calling calling 
+						ProcessReport(). There are two possible ways how to call the setPageRange() 
+						method:
+						<ul>
+							<li>
+								setPageRange(tnFrom, tnTo)
+								<br>
+								tnFrom and tnTo define the from-to range. If tnTo is empty, the total number of 
+								pages is used
+								<br>
+								<i>Example:</i>
+								<pre>loSession.setPageRange(5,10)</pre>
+							<li>
+								setPageRange(tcRange)
+								<br>
+								tcRange is a string, which can contain page numbers and page ranges delimited 
+								by commas, the page range is defined as "from-to".
+								<br>
+								<i>Example:</i>
+								<pre>loSession.setPageRange("1,4,10-20,25")</pre>
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<a name="udpagesize"><b>User-defined page size</b></a>
+		<p>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						You can define the page size of the generated document. The user-defined page 
+						size will override the page size stored in the report. To define the 
+						user-defined page size, call setPaperSize() method with paper width and paper 
+						height as parameters:
+						<pre>setPaperSize(nUDPaperWidth, nUDPaperHeight)</pre>
+						The unit is Inch * 10000.
+					</td>
+				</tr>
+			</table>
+			<br>
+			<a name="htmlpageadjustment"><b>HTML page size adjustment</b></a>
+		<p>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						When generating HTML documents, XFRX makes the page a bit shorter by default 
+						(by 1.65 inches). This is because when printing from the Internet Explorer, two 
+						lines are added to the page - at the top and bottom of the page - as header and 
+						footer. By calling ShrinkHeight() method, you can either suppress this 
+						behaviour by calling:
+						<pre>ShrinkHeight(0)</pre>
+						or set your own value by which the page will be shrinked. The unit is Inch * 
+						10000, so to make the page shorter by 2 inches, call:
+						<pre>ShrinkHeight(20000)</pre>
+						The value sent by ShrinkHeight() method is applied to all output types, not 
+						just HTML.
+					</td>
+				</tr>
+			</table>
+		</p>
+	</body>
+</html>

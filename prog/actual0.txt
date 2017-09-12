@@ -1,0 +1,147 @@
+alter table docuse add swconta bool;
+alter table docuse add idsritabla int4;
+update docuse set swconta='t', idsritabla=0;
+
+alter table documents add ivabienes float8;
+alter table documents add subconivab float8;
+alter table documents add desconivab float8;
+
+update documents set ivabienes=0, subconivab=0, desconivab=0;
+
+
+drop table aneiva;
+
+CREATE TABLE aneiva (
+  code int8, 
+  femision1 date, 
+  fecha1 date, 
+  numserie1 int4, 
+  numsecue1 int4, 
+  numauto1 int8, 
+  fcaducidad1 date, 
+  fecha2 date, 
+  numserie2 int4, 
+  numsecue2 int4, 
+  numauto2 int8, 
+  fcaducidad2 date, 
+  fecharet date, 
+  montoret float8, 
+  serieret int4, 
+  autoret int8, 
+  secueret int4, 
+  fcaducret date, 
+  idtipdoc int4, 
+  idprov int4, 
+  autimp int4, 
+  drawback char(1) DEFAULT 'N', 
+  credtrib int2, 
+  numserie3 int4, 
+  fcaducidad3 date, 
+  numauto3 int8, 
+  idncnd int4, 
+  idsecudoc int4, 
+  idsectra int4, 
+  fduifue date, 
+  numcomimp varchar(7), 
+  numrefrendo varchar(16), 
+  monfobcif float8, 
+  idbanco int4, 
+  conint char(1), 
+  tltx int4, 
+  porice int4, 
+  tipdocexp int4, 
+  fue varchar(10), 
+  idws int4, 
+  codigoret varchar(5), 
+  porcenret int4, 
+  CONSTRAINT aneivaunico UNIQUE (code)
+) WITH OIDS;
+
+
+**	Todos los documentos q registren anexos q no hayan sido registrados
+insert into aneiva (code, numserie3,  fcaducidad3, numauto3, idws) select code, serie as numserie3, fcaducidad as fcaducidad3, to_number(numauto,'9999999999') as numauto3, idws from vdocuments where not isanulado and isaccount and swaneiva and code not in (select code from aneiva)
+
+**	campo de transferencia en documentos
+
+alter table docuse add swtransfer bool;
+update docuse set swtransfer='f';
+
+alter table docuse alter swtransfer set DEFAULT 'f';
+
+alter table usuarios add bodega int4;
+
+update usuarios set bodega=0;
+
+alter table saldosi add constraint fk_items foreign key (iditem) references items on delete restrict on update cascade
+
+***************************
+delete from saldosi where iditem=0;
+
+select distinct min(idsaldosi) as idsaldosi, pdocode, iditem, max(inicial) as inicial, max(precio) as precio, max(saldoact) as saldoact  into table tmp from saldosi group by pdocode, iditem;
+
+drop table saldosi;
+
+CREATE TABLE saldosi (
+  idsaldosi int4 DEFAULT nextval('"saldosi_idsaldosi_seq"'::text) NOT NULL, 
+  pdocode int4, 
+  iditem int4, 
+  inicial float8, 
+  precio float8, 
+  saldoact float8, 
+  CONSTRAINT unicosaldo UNIQUE (pdocode, iditem), 
+  CONSTRAINT pk_idsaldosi PRIMARY KEY (idsaldosi), 
+    CONSTRAINT fk_periodos FOREIGN KEY (pdocode) REFERENCES periodos (pdocode) ON DELETE RESTRICT ON UPDATE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE
+) WITH OIDS;
+
+insert into saldosi ( idsaldosi,  pdocode,  iditem, inicial, precio, saldoact) select  idsaldosi,  pdocode,  iditem, inicial, precio, saldoact from tmp;
+
+CREATE TABLE saldosib (
+  idsaldosi int4 NOT NULL, 
+  bodega int4 NOT NULL, 
+  qtyini float8, 
+  CONSTRAINT fk_bodega FOREIGN KEY (bodega) REFERENCES detagru (iddato) ON DELETE RESTRICT ON UPDATE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE
+) WITH OIDS;
+
+insert into saldosib (idsaldosi, bodega, qtyini) select idsaldosi, 2651, inicial from saldosi ;
+
+alter table usuarios add consindes bool ;
+alter table usuarios add calsalbod bool ;
+alter table usuarios add actcosanu bool ;
+alter table usuarios add printofil bool ;
+
+alter table usuarios alter consindes set default 'f';
+alter table usuarios alter calsalbod set default 'f';
+alter table usuarios alter actcosanu set default 'f';
+alter table usuarios alter printofil set default 'f';
+
+update usuarios set consindes= 'f',  calsalbod= 'f', actcosanu = 'f', printofil ='f';
+
+
+-- actualizar los artiulos (AF)
+
+CREATE TABLE auditoria (
+  idaudi serial NOT NULL, 
+  fecha timestamptz DEFAULT now() NOT NULL, 
+  keytable int4, 
+  nametable varchar(20), 
+  modulo varchar(3), 
+  ame varchar(1), 
+  idu int4 NOT NULL, 
+  progname varchar(20), 
+  CONSTRAINT auditoria_pkey PRIMARY KEY (idaudi)
+) WITH OIDS;
+
+alter table usuarios add postoobar int2;
+
+update usuarios set postoobar =0;
+
+
+-- Actualiza Items Ubicacion
+
+Alter Table items add column ubica integer;
+
+Alter Table items add column ubica2 integer;
+
+
+ALTER TABLE items ADD COLUMN cntbulto integer;
+

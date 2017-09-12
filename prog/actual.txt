@@ -1,0 +1,305 @@
+
+ALTER TABLE docuse ADD COLUMN iscero boolean DEFAULT 'f';
+ALTER TABLE periodos ADD COLUMN cajero integer DEFAULT 0;
+
+ALTER TABLE sujetos ALTER calific TYPE character varying(2);
+ALTER TABLE sujetos
+   ALTER COLUMN calific DROP DEFAULT;
+
+
+ALTER TABLE periodos ADD COLUMN swclilis boolean DEFAULT 'f';
+
+CREATE TABLE rutas
+(
+   idrutas serial, 
+   ruta integer NOT NULL, 
+   vendedor integer NOT NULL, 
+   ciudad integer NOT NULL, 
+   CONSTRAINT pk_rutas PRIMARY KEY (idrutas)
+) 
+WITH (
+  OIDS = FALSE
+)
+;
+
+
+num fact campoverde 75825
+
+CREATE TABLE rutdis
+(
+  idrutdis serial NOT NULL,
+  ruta integer NOT NULL,
+  vendedor integer NOT NULL,
+  CONSTRAINT pk_rutdis PRIMARY KEY (idrutdis)
+)
+
+
+ALTER TABLE documents ADD COLUMN efectivo double precision DEFAULT 0;
+ALTER TABLE documents ADD COLUMN caja double precision DEFAULT 0;
+
+ALTER TABLE usuarios ADD COLUMN ptovta boolean DEFAULT 'false';
+
+****************************************************************************
+
+
+ALTER TABLE asientosdia ADD CONSTRAINT uk_asientosdia UNIQUE (code);
+
+
+******
+
+ALTER TABLE items ADD COLUMN cntbulto integer;
+
+
+*************************************************************************
+
+
+ALTER TABLE imagenrep ADD COLUMN proceso bool DEFAULT 'f';
+
+
+ALTER TABLE auditoria ADD COLUMN nomdoc varchar(25);
+ALTER TABLE auditoria ADD COLUMN observa varchar(200);
+
+ alter table usuarios add printasic bool DEFAULT false;
+ alter table usuarios add confimp bool DEFAULT true;
+ 
+ alter table imagenrep add proceso bool DEFAULT false;
+ 
+ ALTER TABLE auditoria ADD COLUMN campo varchar(100);
+ALTER TABLE auditoria ADD COLUMN valorant varchar(250);
+ALTER TABLE auditoria ADD COLUMN valoract varchar(250);
+
+
+
+ALTER TABLE items ADD COLUMN descripi character varying(200);
+
+
+
+ALTER TABLE items ADD COLUMN esaprox boolean DEFAULT 'f';
+
+
+
+ALTER TABLE saldosb ADD COLUMN salestcta double precision NOT NULL DEFAULT 0;
+
+
+ALTER TABLE plancuenta ADD COLUMN auxsuj integer DEFAULT 0;
+ALTER TABLE plancuenta ADD COLUMN auxite integer DEFAULT 0;
+
+* ATS 2013 **
+
+ALTER TABLE sujetos ADD COLUMN tipdocextraj integer default 20001 ;
+
+INSERT INTO grudat (idgrupo, descripgru, gtag, tipo, gtable) VALUES (300, 'TIPO DE SUJETO EXTRANJERO', 'TSEX', 'G', 'TSUJEXT');
+
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (300, 20001, 'PERSONA NATURAL', '01');
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (300, 20002, 'SOCIEDAD', '02');
+
+INSERT INTO detagru (idgrupo, iddato, descripda, valorda) VALUES (201, 20003, 'FORMA DE PAGO DOCUMENTOS', '');
+
+delete from detagru where idgrupo=10;
+
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'ALEMANIA','202');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'ARGENTINA','101');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'AUSTRALIA','501');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'AUSTRIA','203');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'BELGICA','204');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'BELICE','135');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'BENIN','429');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'BERMUDA','142');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'BIELORRUSIA','596');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'BOLIVIA','102');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'BOSNIA Y HERZEGOVINA','242');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'BRASIL','103');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'BULGARIA','205');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'CANADA','104');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'CHILE','108');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'CHINA POPULAR','331');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'CHIPRE','332');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'COLOMBIA','105');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'COREA DEL SUR','330');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'COREA NORTE','306');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'COSTA DE MARFIL','432');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'COSTA RICA','106');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'CROACIA','243');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'CUBA','107');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'CURAZAO','127');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'DINAMARCA','208');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'DOMINICA','136');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'ECUADOR','593');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'EGIPTO','434');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'EL SALVADOR','123');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'ESLOVAQUIA','252');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'ESLOVENIA','244');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'ESPAÑA','209');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'ESTADOS UNIDOS','110');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'FINLANDIA','212');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'FRANCIA','211');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'GRECIA','214');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'GUATEMALA','111');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'GUYANA','132');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'GUYANA FRANCESA','144');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'HAITI','112');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'HONDURAS','113');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'HONG KONG','354');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'HUNGRIA','216');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'INDIA','309');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'INDONESIA','310');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'IRAK','311');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'IRLANDA','217');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'ISLANDIA','218');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'ISRAEL','313');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'ITALIA','219');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'JAMAICA','114');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'JAPON','314');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'JORDANIA','315');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'KAZAJSTAN','348');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'KUWAIT','316');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'LATVIA','601');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'LETONIA','248');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'LIBANO','318');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'LIBIA','602');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'LIECHTENSTEIN','234');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'LITUANIA','249');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'LUXEMBURGO','220');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'MACEDONIA','251');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'MALTA','221');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'MEXICO','116');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'MONACO','235');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'NICARAGUA','117');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'NORUEGA','222');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'NUEVA ZELANDA','503');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'PAISES BAJOS (HOLANDA)','215');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'PALESTINA','353');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'PANAMA','118');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'PARAGUAY','119');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'PERU','120');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'POLONIA','223');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'PORTUGAL','224');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'PUERTO RICO','121');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'REINO UNIDO','213');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'REPUBLICA CHECA','599');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'REPUBLICA DOMINICANA','122');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'RUSIA','230');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'SAN MARINO','237');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'SERBIA','688');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'SINGAPUR','338');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'SUECIA','226');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'SUIZA','227');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'TAILANDIA','325');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'TAIWAN (CHINA)','307');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'TRINIDAD Y TOBAGO','124');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'TUNEZ','452');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'TURQUIA','346');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'UCRANIA','229');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'URUGUAY','125');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'UZBEKISTAN','352');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'VATICANO (SANTA SEDE)','238');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'VENEZUELA','126');
+INSERT INTO detagru (idgrupo, descripda, valorda) VALUES (10,'VIETNAM','341');
+
+
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (1, 'SIN UTILIZACION DEL SISTEMA FINANCIERO', 0, 0, 20003, 1);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (2, 'CHEQUE PROPIO', 0, 0, 20003, 2);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (3, 'CHEQUE CERTIFICADO', 0, 0, 20003, 3);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (4, 'CHEQUE DE GERENCIA', 0, 0, 20003, 4);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (5, 'CHEQUE DEL EXTERIOR', 0, 0, 20003, 5);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (6, 'DEBITO DE CUENTA', 0, 0, 20003, 6);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (7, 'TRANSFERENCIA PROPIO BANCO', 0, 0, 20003, 7);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (8, 'TRANSFERENCIA OTRO BANCO NACIONAL', 0, 0, 20003, 8);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (9, 'TRANSFERENCIA  BANCO EXTERIOR', 0, 0, 20003, 9);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (10, 'TARJETA DE CREDITO NACIONAL', 0, 0, 20003, 10);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (11, 'TARJETA DE CREDITO INTERNACIONAL', 0, 0, 20003, 11);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (12, 'GIRO', 0, 0, 20003, 12);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (13, 'DEPOSITO EN CUENTA (CORRIENTE/AHORROS)', 0, 0, 20003, 13);
+INSERT INTO sritabla (codigo, descrip, anio, mes, iddato, valor) VALUES (14, 'ENDOSO DE INVERSION', 0, 0, 20003, 14);
+
+
+alter table aneiva add fimpresion  date;
+alter table aneiva add fptipori integer default 0;
+alter table aneiva add fppaispag integer default 1;
+alter table aneiva add fpcondbtri integer default 0;
+alter table aneiva add fpretnolega integer default 0 ;
+alter table aneiva add forpag1 integer ;
+alter table aneiva add forpag2 integer ;
+alter table aneiva add forpag3 integer ;     
+
+CREATE TABLE tmpaneiva (
+  code bigint NOT NULL,
+  femision1 date,
+  fecha1 date,
+  numserie1 integer DEFAULT 0,
+  numsecue1 integer DEFAULT 0,
+  numauto1 character varying(40),
+  fcaducidad1 date,
+  fecha2 date,
+  numserie2 integer DEFAULT 0,
+  numsecue2 integer DEFAULT 0,
+  numauto2 character varying(40),
+  fcaducidad2 date,
+  fecharet date,
+  montoret double precision,
+  serieret integer,
+  autoret character varying(40),
+  secueret integer,
+  fcaducret date,
+  idtipdoc integer DEFAULT 0,
+  idprov integer,
+  autimp integer,
+  drawback character(1) DEFAULT 'N'::bpchar,
+  credtrib smallint,
+  numserie3 integer,
+  fcaducidad3 date,
+  numauto3 character varying(40),
+  idncnd integer,
+  idsecudoc integer,
+  idsectra integer DEFAULT 0,
+  fduifue date,
+  numcomimp character varying(7),
+  numrefrendo character varying(16),
+  monfobcif double precision,
+  idbanco integer,
+  conint character(1),
+  tltx integer,
+  porice integer,
+  tipdocexp integer,
+  fue character varying(10),
+  idws integer,
+  codigoret character varying(5),
+  porcenret integer, 	
+  fimpresion date,
+  femiauto date,
+  fptipori integer,
+  fppaispag integer,
+  fpcondbtri integer,
+  fpretnolega integer,
+  forpag1 integer,
+  forpag2 integer,
+  forpag3 integer     
+)
+WITH (
+  OIDS=FALSE
+);
+
+insert into tmpaneiva select * from aneiva ;     
+
+drop view vaneuret;
+drop view vdocumentg;
+drop view vdocuret;
+drop table aneiva;
+
+select * into table aneiva from tmpaneiva;
+
+alter table aneiva add CONSTRAINT pk_aneiva PRIMARY KEY (code);
+alter table aneiva add CONSTRAINT code FOREIGN KEY (code)
+      REFERENCES documents (code) MATCH SIMPLE
+      ON UPDATE CASCADE ON DELETE RESTRICT ;
+
+CREATE UNIQUE INDEX aneivaunico
+  ON aneiva
+  USING btree
+  (code);
+
+CREATE TABLE aneivarg(  code integer NOT NULL,  tipocomp integer,  idproveedor integer,  serie integer,  secuencia integer,  autoriza character varying(40) DEFAULT 0,  fecemi date,  base0 double precision,  base12 double precision,  montoiva double precision,  CONSTRAINT pk_code PRIMARY KEY (code ))WITH (  OIDS=FALSE);ALTER TABLE aneivarg  OWNER TO postgres;
+
+alter table empresas add contador character varying (100);
+alter table empresas add numestb integer default 0 ;
+

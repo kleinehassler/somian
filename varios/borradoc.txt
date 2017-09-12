@@ -1,0 +1,77 @@
+begin;
+
+delete from asientosmov ;
+
+delete from asientosdia ;
+
+delete from  cobros ;
+
+delete from  aneiva;
+
+delete from  detseries ;
+
+delete from  detadoci ;
+
+delete from  cheques where isefectivo ;
+
+delete from  detadocd;
+
+delete from detadocb where isconfbanc;
+
+delete from  detadocp;
+
+delete from  detadocs;
+
+delete from  detadocl;
+
+delete from  importd;
+
+delete from  importf;
+
+delete from  impconte;
+
+delete from  contenedord;
+
+delete from  import;
+
+delete from  producegr;
+
+delete from  producing;
+
+delete from  produccion;
+
+delete from  saldoscon ;
+
+delete from  saldosci;
+
+delete from  saldosib;
+
+delete from  saldosi;
+
+delete from  saldosb;
+
+delete from  retenreci;
+
+drop trigger documents_elimina on documents restrict;
+
+delete from  documents ;
+
+delete from  horaex;
+
+delete from  feriados;
+
+delete from  conteof;
+
+update bloqueos set islock='f';
+
+delete from  auditoria;
+
+--delete from  actdoc;
+
+commit;
+
+CREATE TRIGGER documents_elimina
+  AFTER DELETE
+  ON documents
+  FOR EACH ROW
+  EXECUTE PROCEDURE eliminadoc();
